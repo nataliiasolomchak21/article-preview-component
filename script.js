@@ -3,5 +3,5 @@ const shareBox = document.querySelector('.share-hidden')
 
 
 shareBtn.addEventListener("click", function() {
-    shareBox.classList.add('active')
+    shareBox.classList.toggle('active')
 })

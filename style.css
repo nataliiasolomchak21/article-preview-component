@@ -56,7 +56,7 @@ body {
   font-size: 13px;
   color: hsl(214, 17%, 51%);
   font-weight: 500;
-  margin-bottom: 1.5rem;
+  margin-bottom: .5rem;
   line-height: 20px;
 }
 
@@ -84,9 +84,11 @@ body {
 .person-info p {
   font-size: 13px;
   font-weight: 500;
+  color: hsl(206, 4%, 64%);
 }
 
-.share-arrow {
+.share-arrow,
+.share-arrow-active {
   border-radius: 50%;
   background-color: hsl(210, 46%, 95%);
   width: 35px;
@@ -94,8 +96,20 @@ body {
   cursor: pointer;
 }
 
+.share-arrow:hover {
+  background-color: hsl(217, 19%, 35%);
+}
+
 .share-arrow img {
-  margin: 0.4rem;
+  margin: 0.5rem;
+}
+
+.share-hidden .share-arrow-active {
+  background-color: hsl(212, 23%, 69%);
+}
+
+.share-hidden .share-arrow-active img {
+  margin: 0.5rem;
 }
 
 .share-hidden {
@@ -107,7 +121,7 @@ body {
   text-transform: uppercase;
   color: white;
   font-weight: 500;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
 }
 
 .share-hidden.active {
@@ -116,31 +130,81 @@ body {
   padding: 0 1.8rem;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   background-color: hsl(217, 19%, 35%);
   align-items: center;
   position: absolute;
-  top: auto;
   right: 0;
   bottom: 0;
   left: 0;
-  border-radius: 0 .5rem 0 .5rem;
+  border-radius: 0 0 .5rem .5rem;
   opacity: 100;
+}
+
+.icons {
+  margin-right: 2rem;
 }
 
 .share-icons {
     margin-left: 15px;
 }
 
-@media (min-width: 765px) {
+
+@media (min-width: 520px) {
+  .share-hidden {
+    display: none;
+  }
+
+  .card-overlay {
+    width: fit-content;
+    height: fit-content;
+  }
+}
+
+@media (min-width: 900px) {
   .card {
-    width: 740px;
+    width: 800px;
     height: 300px;
     display: flex;
     flex-direction: row;
   }
 
+  .card h1 {
+    font-size: 20px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+
   .card-img {
     border-radius: 0.5rem 0 0 0.5rem;
+  }
+
+  .share-hidden.active {
+    width: 270px;
+    height: 65px;
+    position: absolute;
+    left: 77%;
+    bottom: 30%;
+    border-radius: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+  }
+
+  .bottom-arrow {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: -9px;
+    transform: rotate(45deg);
+    background-color: hsl(217, 19%, 35%);
+    margin-bottom: .3rem;
+  }
+  
+  .share-arrow-active {
+    display: none;
   }
 }
